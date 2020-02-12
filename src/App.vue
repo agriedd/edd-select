@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-10 offset-lg-4 offset-md-4 offset-lg-1" placeholder="Select">
+          <div class="d-flex flex-column justify-content-center" style="height: 100vh">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+                <edd-select v-bind:options="options"></edd-select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EddSelect from './components/EddSelect.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    EddSelect
+  },
+  data(){
+    return {
+      options: [
+        {id: 1, label: "Option 1"},
+        {id: 2, label: "Option 2"},
+        {id: 3, label: "Option 3"},
+        {id: 4, label: "Option 4"},
+      ]
+    }
   }
 }
 </script>
-
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "~bootstrap/scss/bootstrap"
 </style>
